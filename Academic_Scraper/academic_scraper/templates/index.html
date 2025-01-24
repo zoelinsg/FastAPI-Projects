@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container">
+        <h2>歡迎來到學術論文爬蟲與關鍵詞分析</h2>
+        <p>請輸入關鍵詞以開始爬取論文數據並進行關鍵詞分析。</p>
+        <form action="/analyze" method="get">
+            <label for="query">關鍵詞:</label>
+            <input type="text" id="query" name="query" required>
+            <button type="submit">開始分析</button>
+        </form>
+    </div>
+{% endblock %}

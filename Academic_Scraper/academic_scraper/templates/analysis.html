@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>關鍵詞分析結果</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>關鍵詞</th>
+                <th>出現次數</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in analysis[:20] %}
+            <tr>
+                <td>{{ item.keyword }}</td>
+                <td>{{ item.count }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="/" class="button">返回首頁</a>
+{% endblock %}

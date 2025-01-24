@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}首頁{% endblock %}
+
+{% block content %}
+<h2>歡迎來到 FAQ Chatbot</h2>
+<p>請在下方輸入您的問題，我們的機器人將自動回應。</p>
+<form id="faq-form">
+    <label for="question">問題：</label>
+    <input type="text" id="question" name="question" required>
+    <button type="submit">提交</button>
+</form>
+<div id="answer"></div>
+
+<script>
+document.getElementById('faq-form').addEventListener('submit', async function(event) {
+    event.preventDefault();
+    const question = document.getElementById('question').value;
+    const response = await fetch('/faq', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ question: question })
+    });
+    const data = await response.json();
+    document.getElementById('answer').innerText = '答案：' + data.answer;
+});
+</script>
+{% endblock %}

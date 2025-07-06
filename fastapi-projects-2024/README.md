@@ -7,8 +7,7 @@
 - **FAQ Chatbot**：一個問答機器人，能夠自動回應用戶的問題。
 
 ## 克隆此倉庫
-    ```sh
+    ```bash
     git clone https://github.com/zoelinsg/FastAPI-Projects.git
-    cd FastAPI-Projects
     ```
 
